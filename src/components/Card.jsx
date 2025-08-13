@@ -1,0 +1,98 @@
+import React, { useEffect, useState } from "react";
+import "../styles.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+} from "../redux/cartSlice";
+import Cart from "./Cart";
+
+const Card = () => {
+  const [desserts, setDesserts] = useState([]);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  useEffect(() => {
+    fetch("https://json-api.uz/api/project/dessertss/desserts")
+      .then((res) => res.json())
+      .then((data) => setDesserts(data.data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  const getQuantity = (id) => {
+    const item = cartItems.find((i) => i.id === id);
+    return item ? item.quantity : 0;
+  };
+
+  return (
+    <div>
+      <h2 className="Title">Desserts</h2>
+      <div className="main">
+        <div className="card-list">
+          {desserts.map((dessert) => {
+            const quantity = getQuantity(dessert.id);
+
+            return (
+              <div className="card" key={dessert.id}>
+                <picture>
+                  <source
+                    media="(min-width:650px)"
+                    srcSet={dessert.image.desktop}
+                  />
+                  <source
+                    media="(min-width:465px)"
+                    srcSet={dessert.image.tablet}
+                  />
+                  <img
+                    src={dessert.image.mobile}
+                    alt={dessert.name}
+                    className="card-img"
+                  />
+                </picture>
+
+                {quantity === 0 ? (
+                  <button
+                    onClick={() => dispatch(addToCart(dessert))}
+                    className="add-to-cart"
+                  >
+                    <img
+                      className="card-icon"
+                      src="public/images/icon-add-to-cart.svg"
+                    />
+                    Add to Cart
+                  </button>
+                ) : (
+                  <div className="counter-btns">
+                    <button
+                      onClick={() => dispatch(decrementQuantity(dessert.id))}
+                      className="btn-minus"
+                    >
+                      <img src="public/images/icon-decrement-quantity.svg" />
+                    </button>
+                    <span>{quantity}</span>
+                    <button
+                      onClick={() => dispatch(incrementQuantity(dessert.id))}
+                      className="btn-pilus"
+                    >
+                      <img src="public/images/icon-increment-quantity.svg" />
+                    </button>
+                  </div>
+                )}
+
+                <div className="card-info">
+                  <p className="category">{dessert.category}</p>
+                  <h3 className="title">{dessert.name}</h3>
+                  <p className="price">${dessert.price}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <Cart />
+      </div>
+    </div>
+  );
+};
+
+export default Card;

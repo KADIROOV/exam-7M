@@ -1,0 +1,167 @@
+.main {
+  display: flex;
+  gap: 32px;
+}
+
+.Title {
+  margin-left: 112px;
+  font-size: 23px;
+  font-family: "Red Hat Text";
+}
+
+.card-list {
+  margin-left: 112px;
+  width: 800px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 32px 0;
+}
+
+.card {
+  width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding-bottom: 16px;
+}
+
+.card picture,
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.add-to-cart {
+  width: 160px;
+  height: 44px;
+  position: absolute;
+  left: 20%;
+  transform: translateY(-40%);
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 6px 28px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  font-family: "Red Hat Text";
+}
+
+.add-to-cart .card-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.add-to-cart:hover {
+  border-color: #c73b0f;
+}
+
+.category {
+  font-weight: 400;
+  font-size: 12px;
+  color: #87635a;
+  margin-top: 38px;
+  margin-left: 8px;
+  font-family: "Red Hat Text";
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px 8px;
+  font-family: "Red Hat Text";
+  color: #260f08;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #c73b0f;
+  margin-left: 8px;
+  font-family: "Red Hat Text";
+}
+
+.counter-btns {
+  width: 160px;
+  height: 44px;
+  position: absolute;
+  left: 20%;
+  transform: translateY(-40%);
+  background-color: #c73b0f;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-family: "Red Hat Text";
+}
+
+.counter-btns .btn-minus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17.5px;
+  height: 17.5px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: all 0.2s ease-in;
+}
+
+.counter-btns span {
+  color: white;
+  font-family: "Red Hat Text";
+  font-weight: 600;
+}
+
+.counter-btns .btn-pilus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17.5px;
+  height: 17.5px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: all 0.2s ease-in;
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/red-hat-text-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-text-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/red-hat-text-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-text-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/red-hat-text-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
