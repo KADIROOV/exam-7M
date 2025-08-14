@@ -54,7 +54,7 @@ const Card = () => {
                   >
                     <img
                       className="card-icon"
-                      src="public/images/icon-add-to-cart.svg"
+                      src="/images/icon-add-to-cart.svg"
                     />
                     Add to Cart
                   </button>
@@ -64,14 +64,14 @@ const Card = () => {
                       onClick={() => dispatch(dec(dessert.id))}
                       className="btn-minus"
                     >
-                      <img src="public/images/icon-decrement-quantity.svg" />
+                      <img src="/images/icon-decrement-quantity.svg" />
                     </button>
                     <span>{quantity}</span>
                     <button
                       onClick={() => dispatch(inc(dessert.id))}
                       className="btn-pilus"
                     >
-                      <img src="public/images/icon-increment-quantity.svg" />
+                      <img src="/images/icon-increment-quantity.svg" />
                     </button>
                   </div>
                 )}

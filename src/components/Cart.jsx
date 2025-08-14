@@ -47,7 +47,7 @@ const Cart = () => {
           </div>
 
           <div className="carbon-note">
-            <img src="public/images/icon-carbon-neutral.svg" alt="" />
+            <img src="/images/icon-carbon-neutral.svg" alt="" />
             <p>
               This is a <strong>carbon-neutral</strong> delivery
             </p>
