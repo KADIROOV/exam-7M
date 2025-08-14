@@ -12,7 +12,7 @@ const Cart = () => {
     .toFixed(2); // bu yerda  carts  productlarini  hisoblashda  gpt dan yordam oldim.
 
   return (
-    <div className="cart-container">
+    <div className="cart-container ">
       <h2 className="cart-title">Your Cart ({cartItems.length})</h2>
 
       {cartItems.length == 0 ? (

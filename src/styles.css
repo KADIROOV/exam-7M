@@ -2,28 +2,20 @@ body {
   background-color: #fcf8f6;
 }
 
-.main {
-  display: flex;
-  gap: 32px;
-}
+@import "tailwindcss";
 
 .Title {
-  margin-left: 112px;
   font-size: 23px;
   font-family: "Red Hat Text";
 }
 
 .card-list {
-  margin-left: 112px;
-  width: 800px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
   padding: 32px 0;
 }
 
 .card {
-  width: 250px;
+  width: 100%;
+
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -34,27 +26,27 @@ body {
 
 .card picture,
 .card img {
-  display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
 .add-to-cart {
-  width: 160px;
-  height: 44px;
   position: absolute;
-  left: 20%;
+  left: 80px;
+  right: 80px;
   transform: translateY(-40%);
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 30px;
-  padding: 6px 28px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   transition: all 0.2s ease;
   font-family: "Red Hat Text";
@@ -95,20 +87,20 @@ body {
 }
 
 .counter-btns {
-  width: 160px;
-  height: 44px;
   position: absolute;
-  left: 20%;
+  left: 80px;
+  right: 80px;
+
   transform: translateY(-40%);
+  padding-top: 6px;
+  padding-bottom: 6px;
   background-color: #c73b0f;
-  border: 1px solid #ddd;
   border-radius: 30px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
-  gap: 45px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   transition: all 0.2s ease;
   font-family: "Red Hat Text";
@@ -118,8 +110,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
   border-radius: 50%;
   background-color: transparent;
   color: white;
@@ -137,8 +130,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
   border-radius: 50%;
   background-color: transparent;
   color: white;

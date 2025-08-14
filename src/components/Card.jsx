@@ -22,10 +22,10 @@ const Card = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto lg:pl-10 lg:pr-10 pl-1 pr-1">
       <h2 className="Title">Desserts</h2>
-      <div className="main">
-        <div className="card-list">
+      <div className="  xl:flex gap-5 ">
+        <div className="card-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5   ">
           {desserts.map((dessert) => {
             const quantity = getQuantity(dessert.id);
 
