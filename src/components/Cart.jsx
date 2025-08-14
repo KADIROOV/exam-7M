@@ -17,7 +17,7 @@ const Cart = () => {
 
       {cartItems.length == 0 ? (
         <div className="empty-cart">
-          <img src="public/images/illustration-empty-cart.svg" width="128px" />
+          <img src="/images/illustration-empty-cart.svg" width="128px" />
           <h4>Your added items will appear here</h4>
         </div>
       ) : (
