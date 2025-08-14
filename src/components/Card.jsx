@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addToCart,
-  incrementQuantity,
-  decrementQuantity,
-} from "../redux/cartSlice";
+import { addToCart, inc, dec } from "../redux/cartSlice";
 import Cart from "./Cart";
 
 const Card = () => {
@@ -65,14 +61,14 @@ const Card = () => {
                 ) : (
                   <div className="counter-btns">
                     <button
-                      onClick={() => dispatch(decrementQuantity(dessert.id))}
+                      onClick={() => dispatch(dec(dessert.id))}
                       className="btn-minus"
                     >
                       <img src="public/images/icon-decrement-quantity.svg" />
                     </button>
                     <span>{quantity}</span>
                     <button
-                      onClick={() => dispatch(incrementQuantity(dessert.id))}
+                      onClick={() => dispatch(inc(dessert.id))}
                       className="btn-pilus"
                     >
                       <img src="public/images/icon-increment-quantity.svg" />

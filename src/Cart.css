@@ -1,11 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap");
-
 .cart-container {
   font-family: "Red Hat Text", sans-serif;
   background: #fff;
   width: 384px;
-  padding: 16px;
   border-radius: 16px;
+  padding: 24px 24px 40px 24px;
+  height: 300px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 8px;
+}
+.cart-container::-webkit-scrollbar-button {
+  display: none;
+}
+
+.empty-cart {
+  text-align: center;
+}
+
+.empty-cart img {
+  margin-top: 40px;
+}
+
+.empty-cart h4 {
+  color: #87635a;
+  font-weight: 600;
+  font-family: "Red Hat Text";
+  font-size: 16px;
 }
 
 .cart-title {
@@ -45,11 +69,23 @@
 }
 
 .remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid #ad8a85;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
   background: none;
-  border: none;
   font-size: 18px;
   color: #ad8a85;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.remove-btn:hover {
+  border-color: black;
+  color: black;
 }
 
 .cart-total {

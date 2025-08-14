@@ -10,18 +10,18 @@ const cartSlice = createSlice({
     reducers: {
         addToCart: (state, action) => {
             const item = action.payload;
-            const existing = state.cartItems.find(i => i.id === item.id);
-            if (existing) {
-                existing.quantity += 1;
+            const product = state.cartItems.find(i => i.id === item.id); // bu yerda  find arra metodidan gpt  yordamida  foydalanganman!!!
+            if (product) {
+                product.quantity += 1;
             } else {
                 state.cartItems.push({ ...item, quantity: 1 });
             }
         },
-        incrementQuantity: (state, action) => {
+        inc: (state, action) => {
             const item = state.cartItems.find(i => i.id === action.payload);
             if (item) item.quantity += 1;
         },
-        decrementQuantity: (state, action) => {
+        dec: (state, action) => {
             const item = state.cartItems.find(i => i.id === action.payload);
             if (item) {
                 if (item.quantity > 1) {
@@ -31,16 +31,20 @@ const cartSlice = createSlice({
                 }
             }
         },
-        removeFromCart: (state, action) => {
+        removeCart: (state, action) => {
             state.cartItems = state.cartItems.filter(i => i.id !== action.payload);
+        },
+        clearCart: (state) => {
+            state.cartItems = []
         }
     }
 });
 
 export const {
     addToCart,
-    incrementQuantity,
-    decrementQuantity,
-    removeFromCart
+    inc,
+    dec,
+    removeCart,
+    clearCart
 } = cartSlice.actions;
 export default cartSlice.reducer;
